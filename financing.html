@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financing | Velocity Motors</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar"><div class="container"><span>1231 S. Main St., Santa Ana, CA 92707</span><div class="topbar-links"><a href="tel:714-835-7522">714-835-7522</a><span data-en="Mon–Sat 9am–7pm" data-es="Lun–Sáb 9am–7pm">Mon–Sat 9am–7pm</span><button id="langToggle" class="lang-toggle">Español</button></div></div></div>
+<header class="header"><div class="container"><a href="index.html" class="logo">VELOCITY<span>MOTORS</span></a><nav class="nav"><a href="inventory.html" data-en="Inventory" data-es="Inventario">Inventory</a><a href="financing.html" data-en="Financing" data-es="Financiamiento">Financing</a><a href="sell-your-car.html" data-en="Sell Your Car" data-es="Vende tu Auto">Sell Your Car</a><a href="about.html" data-en="About Us" data-es="Sobre Nosotros">About Us</a><a href="index.html#visit" data-en="Contact" data-es="Contacto">Contact</a></nav><div class="header-cta"><span class="phone-cta">714-835-7522</span><a href="inventory.html" class="btn btn-primary btn-sm" data-en="View Inventory" data-es="Ver Inventario">View Inventory</a></div></div></header>
+
+<main class="section"><div class="container">
+<div class="section-head"><div>
+  <span class="eyebrow" style="color:var(--red)" data-en="Financing" data-es="Financiamiento">Financing</span>
+  <h2 data-en="Estimate Your Monthly Payment" data-es="Calcula Tu Pago Mensual">Estimate Your Monthly Payment</h2>
+  <p class="sub" data-en="Get a quick estimate, then talk to our finance team to lock in real numbers." data-es="Obtén un estimado rápido, luego habla con nuestro equipo de financiamiento para confirmar las cifras reales.">Get a quick estimate, then talk to our finance team to lock in real numbers.</p>
+</div></div>
+
+<div class="finance-grid">
+  <div class="search-card finance-calc">
+    <h3 data-en="Loan Calculator" data-es="Calculadora de Préstamo">Loan Calculator</h3>
+    <p class="sub" data-en="Adjust the numbers to see an estimated payment" data-es="Ajusta los números para ver un pago estimado">Adjust the numbers to see an estimated payment</p>
+
+    <div class="field" style="margin-top:16px">
+      <label data-en="Vehicle Price" data-es="Precio del Vehículo">Vehicle Price</label>
+      <input type="number" id="calcPrice" value="18000" min="0" step="100">
+    </div>
+    <div class="search-row">
+      <div class="field">
+        <label data-en="Down Payment" data-es="Pago Inicial">Down Payment</label>
+        <input type="number" id="calcDown" value="2000" min="0" step="100">
+      </div>
+      <div class="field">
+        <label data-en="Trade-In Value" data-es="Valor de tu Auto Actual">Trade-In Value</label>
+        <input type="number" id="calcTrade" value="0" min="0" step="100">
+      </div>
+    </div>
+    <div class="search-row">
+      <div class="field">
+        <label data-en="Estimated APR (%)" data-es="TAE Estimada (%)">Estimated APR (%)</label>
+        <input type="number" id="calcApr" value="9.9" min="0" max="30" step="0.1">
+      </div>
+      <div class="field">
+        <label data-en="Loan Term" data-es="Plazo del Préstamo">Loan Term</label>
+        <select id="calcTerm">
+          <option value="36">36 <span data-en="months" data-es="meses">months</span></option>
+          <option value="48">48 <span data-en="months" data-es="meses">months</span></option>
+          <option value="60" selected>60 <span data-en="months" data-es="meses">months</span></option>
+          <option value="72">72 <span data-en="months" data-es="meses">months</span></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="finance-result">
+      <span class="finance-result-label" data-en="Estimated Monthly Payment" data-es="Pago Mensual Estimado">Estimated Monthly Payment</span>
+      <span class="finance-result-num" id="calcResult">$339/mo</span>
+    </div>
+    <p class="finance-disclaimer" data-en="This is an estimate only, not an offer of credit. Actual rate and payment depend on approved credit, term, and vehicle." data-es="Esto es solo un estimado, no una oferta de crédito. La tasa y el pago reales dependen del crédito aprobado, el plazo y el vehículo.">This is an estimate only, not an offer of credit. Actual rate and payment depend on approved credit, term, and vehicle.</p>
+  </div>
+
+  <div class="finance-cta">
+    <span class="eyebrow" style="color:var(--red)" data-en="Next Step" data-es="Siguiente Paso">Next Step</span>
+    <h2 data-en="Talk to our finance team" data-es="Habla con nuestro equipo de financiamiento">Talk to our finance team</h2>
+    <p style="color:var(--muted);line-height:1.7;margin:14px 0 26px" data-en="We work with seven lenders, from prime to second-chance financing. Reach out and we'll walk you through real options based on your situation." data-es="Trabajamos con siete prestamistas, desde crédito preferencial hasta segunda oportunidad. Contáctanos y te guiaremos con opciones reales según tu situación.">We work with seven lenders, from prime to second-chance financing. Reach out and we'll walk you through real options based on your situation.</p>
+    <a href="tel:714-835-7522" class="btn btn-primary btn-block" data-en="Call 714-835-7522" data-es="Llamar al 714-835-7522">Call 714-835-7522</a>
+    <a href="mailto:velocitymotors714@gmail.com?subject=Financing%20Inquiry" class="btn btn-outline btn-block" style="margin-top:10px" data-en="Email Our Finance Team" data-es="Enviar Correo al Equipo">Email Our Finance Team</a>
+  </div>
+</div>
+
+<div class="section-head" id="credit-app" style="margin-top:60px">
+  <div>
+    <span class="eyebrow" style="color:var(--red)" data-en="Get Pre-Qualified" data-es="Precalifícate">Get Pre-Qualified</span>
+    <h2 data-en="Credit Application" data-es="Solicitud de Crédito">Credit Application</h2>
+    <p class="sub" data-en="A quick pre-qualification — our finance team will follow up to complete the rest securely by phone." data-es="Una precalificación rápida — nuestro equipo de financiamiento te contactará para completar el resto de forma segura por teléfono.">A quick pre-qualification — our finance team will follow up to complete the rest securely by phone.</p>
+  </div>
+</div>
+
+<form class="search-card credit-app-form" id="creditAppForm" data-lead-form>
+  <input type="hidden" name="_subject" value="Credit Application - Velocity Motors">
+  <div class="search-row">
+    <div class="field">
+      <label data-en="Full Name" data-es="Nombre Completo">Full Name</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="field">
+      <label data-en="Phone or Email" data-es="Teléfono o Correo">Phone or Email</label>
+      <input type="text" name="contact" required>
+    </div>
+  </div>
+  <div class="search-row">
+    <div class="field">
+      <label data-en="Street Address" data-es="Dirección">Street Address</label>
+      <input type="text" name="address" required>
+    </div>
+    <div class="field">
+      <label data-en="City" data-es="Ciudad">City</label>
+      <input type="text" name="city" required>
+    </div>
+  </div>
+  <div class="search-row">
+    <div class="field">
+      <label data-en="State" data-es="Estado">State</label>
+      <input type="text" name="state" maxlength="2" value="CA" required>
+    </div>
+    <div class="field">
+      <label data-en="ZIP" data-es="Código Postal">ZIP</label>
+      <input type="text" name="zip" required>
+    </div>
+  </div>
+  <div class="search-row">
+    <div class="field">
+      <label data-en="Employment Status" data-es="Estado Laboral">Employment Status</label>
+      <select name="employment_status">
+        <option data-en="Employed" data-es="Empleado">Employed</option>
+        <option data-en="Self-Employed" data-es="Trabajador Independiente">Self-Employed</option>
+        <option data-en="Retired" data-es="Jubilado">Retired</option>
+        <option data-en="Other" data-es="Otro">Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label data-en="Employer Name" data-es="Nombre del Empleador">Employer Name</label>
+      <input type="text" name="employer">
+    </div>
+  </div>
+  <div class="search-row">
+    <div class="field">
+      <label data-en="Monthly Income" data-es="Ingreso Mensual">Monthly Income</label>
+      <input type="text" name="monthly_income" placeholder="e.g. $4,200">
+    </div>
+    <div class="field">
+      <label data-en="Vehicle of Interest (optional)" data-es="Vehículo de Interés (opcional)">Vehicle of Interest (optional)</label>
+      <input type="text" name="vehicle_of_interest" placeholder="e.g. 2023 Chevrolet Equinox">
+    </div>
+  </div>
+  <p class="finance-disclaimer" data-en="This is a pre-qualification request, not a final credit decision. We will never ask for your Social Security Number or full financial account details by web form — our finance team will collect any additional information securely by phone." data-es="Esta es una solicitud de precalificación, no una decisión final de crédito. Nunca te pediremos tu número de Seguro Social ni detalles completos de cuentas financieras por este formulario — nuestro equipo de financiamiento recopilará cualquier información adicional de forma segura por teléfono.">This is a pre-qualification request, not a final credit decision. We will never ask for your Social Security Number or full financial account details by web form — our finance team will collect any additional information securely by phone.</p>
+  <button type="submit" class="btn btn-primary btn-block" data-en="Submit Application" data-es="Enviar Solicitud">Submit Application</button>
+  <p class="form-status"></p>
+</form>
+
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-bottom"><span data-en="© 2026 Velocity Motors. All rights reserved." data-es="© 2026 Velocity Motors. Todos los derechos reservados.">© 2026 Velocity Motors. All rights reserved.</span><a href="index.html">Velocity Motors</a></div></div></footer>
+<script src="script.js"></script>
+</body></html>

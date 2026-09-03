@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vehicle Details | Velocity Motors</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="topbar"><div class="container"><span>1231 S. Main St., Santa Ana, CA 92707</span><div class="topbar-links"><a href="tel:714-835-7522">714-835-7522</a><button id="langToggle" class="lang-toggle">Español</button></div></div></div>
+<header class="header"><div class="container"><a href="index.html" class="logo">VELOCITY<span>MOTORS</span></a><div class="header-cta"><a href="inventory.html" class="btn btn-outline btn-sm" data-en="← Inventory" data-es="← Inventario">← Inventory</a><a href="tel:714-835-7522" class="btn btn-primary btn-sm" data-en="Call Dealer" data-es="Llamar al Distribuidor">Call Dealer</a></div></div></header>
+<main class="section"><div class="container">
+<div class="section-head"><div><span class="eyebrow" style="color:var(--red)" data-en="Vehicle Details" data-es="Detalles del Vehículo">Vehicle Details</span><h2 id="title">2023 Chevrolet Equinox LS</h2><p class="sub" id="meta">116,833 miles · SUV</p></div></div>
+
+<div class="vehicle-detail-grid">
+  <div>
+    <div class="gallery">
+      <div class="gallery-main">
+        <img id="photo" src="" alt="Vehicle">
+        <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous photo">&#8249;</button>
+        <button class="gallery-nav next" id="galleryNext" aria-label="Next photo">&#8250;</button>
+        <span class="gallery-counter" id="galleryCounter">1 / 1</span>
+      </div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+
+    <div class="spec-sheet">
+      <h3 data-en="Vehicle Specifications" data-es="Especificaciones del Vehículo">Vehicle Specifications</h3>
+      <div class="spec-grid" id="specGrid"></div>
+    </div>
+  </div>
+
+  <div class="search-card" style="height:max-content">
+    <div class="car-price" id="price">$14,900</div>
+    <p class="sub" style="margin-top:8px" data-en="Showroom Price" data-es="Precio de Venta">Showroom Price</p>
+    <p style="line-height:1.7;color:var(--muted)" data-en="Ask our team about availability, financing, trade-ins, and scheduling a test drive." data-es="Pregúntale a nuestro equipo sobre disponibilidad, financiamiento, recompra de tu auto y cómo agendar una prueba de manejo.">Ask our team about availability, financing, trade-ins, and scheduling a test drive.</p>
+    <a class="btn btn-primary btn-block" href="tel:714-835-7522" data-en="Call 714-835-7522" data-es="Llamar al 714-835-7522">Call 714-835-7522</a>
+    <a class="btn btn-outline btn-block" href="mailto:velocitymotors714@gmail.com" style="margin-top:10px" data-en="Contact Dealer" data-es="Contactar al Distribuidor">Contact Dealer</a>
+    <a class="btn btn-outline btn-block" href="financing.html" style="margin-top:10px" data-en="Estimate Payment" data-es="Estimar Pago">Estimate Payment</a>
+  </div>
+</div>
+</div></main>
+<footer class="footer"><div class="container"><div class="footer-bottom"><span data-en="© 2026 Velocity Motors. All rights reserved." data-es="© 2026 Velocity Motors. Todos los derechos reservados.">© 2026 Velocity Motors. All rights reserved.</span><a href="index.html">Velocity Motors</a></div></div></footer>
+<script src="script.js"></script>
+<script>
+const specLabels = {
+  exterior: {en:"Exterior Color", es:"Color Exterior"},
+  interior: {en:"Interior Color", es:"Color Interior"},
+  stock: {en:"Stock Number", es:"Número de Stock"},
+  mileage: {en:"Mileage", es:"Millaje"},
+  engine: {en:"Engine", es:"Motor"},
+  fuel: {en:"Fuel", es:"Combustible"},
+  transmission: {en:"Transmission", es:"Transmisión"},
+  drivetrain: {en:"Drivetrain", es:"Tracción"},
+  vin: {en:"VIN", es:"VIN"}
+};
+
+function isSpanish() { return document.documentElement.lang === "es"; }
+
+function formatPriceLocal(n) {
+  if (!n || n <= 0) return "Call for Price";
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function renderVehicle(v) {
+  const title = [v.year, v.make, v.model, v.trim].filter(Boolean).join(" ");
+  const mileageStr = Math.round(v.mileage || 0).toLocaleString("en-US");
+  document.getElementById("title").textContent = title;
+  document.getElementById("meta").textContent = `${mileageStr} miles · ${v.bodyStyle || ""}`;
+  document.getElementById("price").textContent = formatPriceLocal(v.price);
+  document.title = title + " | Velocity Motors";
+
+  const specs = {
+    exterior: v.extColorFactory || v.extColor,
+    interior: v.intColorFactory || v.intColor,
+    stock: v.stockNum,
+    mileage: mileageStr,
+    engine: v.engine,
+    fuel: v.fuel,
+    transmission: v.transmission,
+    drivetrain: v.drivetrain,
+    vin: v.vin
+  };
+
+  const specGrid = document.getElementById("specGrid");
+  Object.keys(specs).forEach((key) => {
+    if (!specs[key]) return;
+    const row = document.createElement("div");
+    row.className = "spec-row";
+    const label = document.createElement("span");
+    label.className = "spec-label";
+    label.setAttribute("data-en", specLabels[key].en);
+    label.setAttribute("data-es", specLabels[key].es);
+    label.textContent = isSpanish() ? specLabels[key].es : specLabels[key].en;
+    const value = document.createElement("span");
+    value.className = "spec-value";
+    value.textContent = specs[key];
+    row.appendChild(label);
+    row.appendChild(value);
+    specGrid.appendChild(row);
+  });
+
+  // Photo gallery
+  const photos = v.photos && v.photos.length ? v.photos : [""];
+  let currentPhoto = 0;
+  const photoEl = document.getElementById("photo");
+  const counterEl = document.getElementById("galleryCounter");
+  const thumbsEl = document.getElementById("galleryThumbs");
+
+  function renderGallery() {
+    photoEl.src = photos[currentPhoto];
+    photoEl.alt = title;
+    counterEl.textContent = (currentPhoto + 1) + " / " + photos.length;
+    thumbsEl.querySelectorAll(".gallery-thumb").forEach((t, i) => {
+      t.classList.toggle("active", i === currentPhoto);
+    });
+  }
+
+  photos.forEach((src, i) => {
+    const thumb = document.createElement("img");
+    thumb.src = src;
+    thumb.className = "gallery-thumb";
+    thumb.alt = "Photo " + (i + 1);
+    thumb.addEventListener("click", () => { currentPhoto = i; renderGallery(); });
+    thumbsEl.appendChild(thumb);
+  });
+
+  document.getElementById("galleryPrev").addEventListener("click", () => {
+    currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+    renderGallery();
+  });
+  document.getElementById("galleryNext").addEventListener("click", () => {
+    currentPhoto = (currentPhoto + 1) % photos.length;
+    renderGallery();
+  });
+
+  renderGallery();
+}
+
+function showNotFound() {
+  document.getElementById("title").textContent = isSpanish() ? "Vehículo no encontrado" : "Vehicle not found";
+  document.getElementById("meta").textContent = isSpanish()
+    ? "Es posible que este vehículo ya se haya vendido. Vea nuestro inventario actual."
+    : "This vehicle may have already sold. Check our current inventory.";
+  document.getElementById("price").textContent = "";
+}
+
+const requestedId = new URLSearchParams(location.search).get("id");
+
+fetch("data/inventory.json", { cache: "no-store" })
+  .then((res) => res.json())
+  .then((data) => {
+    const vehicles = data.vehicles || [];
+    const v = requestedId
+      ? vehicles.find((veh) => veh.id === requestedId)
+      : vehicles[0];
+    if (v) {
+      renderVehicle(v);
+    } else {
+      showNotFound();
+    }
+  })
+  .catch(() => {
+    showNotFound();
+  });
+</script></body></html>

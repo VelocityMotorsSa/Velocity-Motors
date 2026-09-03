@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schedule a Test Drive | Velocity Motors</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar"><div class="container"><span>1231 S. Main St., Santa Ana, CA 92707</span><div class="topbar-links"><a href="tel:714-835-7522">714-835-7522</a><span data-en="Mon–Sat 9am–7pm" data-es="Lun–Sáb 9am–7pm">Mon–Sat 9am–7pm</span><button id="langToggle" class="lang-toggle">Español</button></div></div></div>
+<header class="header"><div class="container"><a href="index.html" class="logo">VELOCITY<span>MOTORS</span></a><nav class="nav"><a href="inventory.html" data-en="Inventory" data-es="Inventario">Inventory</a><a href="financing.html" data-en="Financing" data-es="Financiamiento">Financing</a><a href="sell-your-car.html" data-en="Sell Your Car" data-es="Vende tu Auto">Sell Your Car</a><a href="about.html" data-en="About Us" data-es="Sobre Nosotros">About Us</a><a href="index.html#visit" data-en="Contact" data-es="Contacto">Contact</a></nav><div class="header-cta"><span class="phone-cta">714-835-7522</span><a href="inventory.html" class="btn btn-primary btn-sm" data-en="View Inventory" data-es="Ver Inventario">View Inventory</a></div></div></header>
+
+<main class="section"><div class="container">
+<div class="section-head"><div>
+  <span class="eyebrow" style="color:var(--red)" data-en="Schedule a Test Drive" data-es="Agendar Prueba de Manejo">Schedule a Test Drive</span>
+  <h2 data-en="Pick a time that works for you" data-es="Elige un horario que te funcione">Pick a time that works for you</h2>
+  <p class="sub" data-en="Tell us when you'd like to come in and which car you want to drive — we'll confirm by phone or email." data-es="Dinos cuándo te gustaría venir y qué auto quieres manejar — te confirmaremos por teléfono o correo.">Tell us when you'd like to come in and which car you want to drive — we'll confirm by phone or email.</p>
+</div></div>
+
+<div class="request-band" style="margin-top:10px">
+  <div class="request-inner">
+    <div class="request-copy">
+      <span class="eyebrow" style="color:var(--red)" data-en="Open Mon–Sat, 9am–7pm" data-es="Abierto Lun–Sáb, 9am–7pm">Open Mon–Sat, 9am–7pm</span>
+      <h2 data-en="No pressure, just a drive" data-es="Sin presión, solo una vuelta">No pressure, just a drive</h2>
+      <p data-en="Submit your preferred date and time below and our team will reach out to confirm — or just call us directly if you'd rather set it up now." data-es="Envía tu fecha y hora preferida abajo y nuestro equipo te contactará para confirmar — o llámanos directamente si prefieres agendarlo ahora.">Submit your preferred date and time below and our team will reach out to confirm — or just call us directly if you'd rather set it up now.</p>
+      <p style="font-size:15px;line-height:1.9;margin-top:20px">
+        <a href="tel:714-835-7522" style="color:var(--red);font-weight:600">714-835-7522</a><br>
+        <span data-en="Mon–Sat 9am–7pm" data-es="Lun–Sáb 9am–7pm">Mon–Sat 9am–7pm</span>
+      </p>
+    </div>
+    <form class="search-card request-form" id="testDriveForm" data-lead-form>
+      <input type="hidden" name="_subject" value="Test Drive Request - Velocity Motors">
+      <h3 data-en="Request a Test Drive" data-es="Solicitar Prueba de Manejo">Request a Test Drive</h3>
+      <p class="sub" data-en="Takes less than a minute" data-es="Toma menos de un minuto">Takes less than a minute</p>
+      <div class="search-row">
+        <div class="field">
+          <label data-en="Your Name" data-es="Tu Nombre">Your Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label data-en="Phone or Email" data-es="Teléfono o Correo">Phone or Email</label>
+          <input type="text" name="contact" required>
+        </div>
+      </div>
+      <div class="search-row">
+        <div class="field">
+          <label data-en="Preferred Date" data-es="Fecha Preferida">Preferred Date</label>
+          <input type="date" name="preferred_date" required>
+        </div>
+        <div class="field">
+          <label data-en="Preferred Time" data-es="Hora Preferida">Preferred Time</label>
+          <select name="preferred_time">
+            <option data-en="Morning (9am–12pm)" data-es="Mañana (9am–12pm)">Morning (9am–12pm)</option>
+            <option data-en="Afternoon (12pm–4pm)" data-es="Tarde (12pm–4pm)">Afternoon (12pm–4pm)</option>
+            <option data-en="Evening (4pm–7pm)" data-es="Noche (4pm–7pm)">Evening (4pm–7pm)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label data-en="Vehicle You'd Like to Drive" data-es="Vehículo que te Gustaría Manejar">Vehicle You'd Like to Drive</label>
+        <input type="text" name="vehicle" placeholder="e.g. 2023 Chevrolet Equinox LS">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" data-en="Request Test Drive" data-es="Solicitar Prueba de Manejo">Request Test Drive</button>
+      <p class="form-status"></p>
+    </form>
+  </div>
+</div>
+
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-bottom"><span data-en="© 2026 Velocity Motors. All rights reserved." data-es="© 2026 Velocity Motors. Todos los derechos reservados.">© 2026 Velocity Motors. All rights reserved.</span><a href="index.html">Velocity Motors</a></div></div></footer>
+<script src="script.js"></script>
+</body></html>

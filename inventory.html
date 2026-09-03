@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inventory | Velocity Motors</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar"><div class="container"><span>1231 S. Main St., Santa Ana, CA 92707</span><div class="topbar-links"><a href="tel:714-835-7522">714-835-7522</a><span data-en="Mon–Sat 9am–7pm" data-es="Lun–Sáb 9am–7pm">Mon–Sat 9am–7pm</span><button id="langToggle" class="lang-toggle">Español</button></div></div></div>
+<header class="header"><div class="container"><a href="index.html" class="logo">VELOCITY<span>MOTORS</span></a><nav class="nav"><a href="inventory.html" data-en="Inventory" data-es="Inventario">Inventory</a><a href="financing.html" data-en="Financing" data-es="Financiamiento">Financing</a><a href="sell-your-car.html" data-en="Sell Your Car" data-es="Vende tu Auto">Sell Your Car</a><a href="about.html" data-en="About Us" data-es="Sobre Nosotros">About Us</a><a href="index.html#visit" data-en="Contact" data-es="Contacto">Contact</a></nav><div class="header-cta"><span class="phone-cta">714-835-7522</span><a href="index.html" class="btn btn-primary btn-sm" data-en="Home" data-es="Inicio">Home</a></div></div></header>
+<main class="section"><div class="container">
+<div class="section-head"><div><h2 data-en="Current Inventory" data-es="Inventario Actual">Current Inventory</h2><p class="sub" data-en="Browse available vehicles from Velocity Motors." data-es="Explora los vehículos disponibles de Velocity Motors.">Browse available vehicles from Velocity Motors.</p></div><a href="index.html" class="btn btn-outline btn-sm" data-en="Back Home" data-es="Volver al Inicio">Back Home</a></div>
+<div class="grid-cards" data-inventory-grid></div>
+
+<div id="request" class="request-band">
+  <div class="request-inner">
+    <div class="request-copy">
+      <span class="eyebrow" style="color:var(--red)" data-en="New Inventory Weekly" data-es="Inventario Nuevo Cada Semana">New Inventory Weekly</span>
+      <h2 data-en="Don't see what you're looking for?" data-es="¿No encuentras lo que buscas?">Don't see what you're looking for?</h2>
+      <p data-en="We're bringing in new inventory every week. Tell us what you want and your budget, and we'll reach out the moment we find a match." data-es="Estamos recibiendo inventario nuevo cada semana. Dinos qué buscas y tu presupuesto, y te contactaremos en cuanto encontremos algo para ti.">We're bringing in new inventory every week. Tell us what you want and your budget, and we'll reach out the moment we find a match.</p>
+    </div>
+    <form class="search-card request-form" id="vehicleRequestForm" data-lead-form><input type="hidden" name="_subject" value="New Vehicle Request - Velocity Motors">
+      <h3 data-en="Request a Vehicle" data-es="Solicitar un Vehículo">Request a Vehicle</h3>
+      <p class="sub" data-en="Takes less than a minute" data-es="Toma menos de un minuto">Takes less than a minute</p>
+      <div class="search-row">
+        <div class="field">
+          <label data-en="Your Name" data-es="Tu Nombre">Your Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label data-en="Phone or Email" data-es="Teléfono o Correo">Phone or Email</label>
+          <input type="text" name="contact" required>
+        </div>
+      </div>
+      <div class="search-row">
+        <div class="field">
+          <label data-en="What Are You Looking For?" data-es="¿Qué Estás Buscando?">What Are You Looking For?</label>
+          <input type="text" name="vehicle" placeholder="e.g. Honda CR-V, SUV, truck..." required>
+        </div>
+        <div class="field">
+          <label data-en="Your Budget" data-es="Tu Presupuesto">Your Budget</label>
+          <select name="budget">
+            <option data-en="Under $15,000" data-es="Menos de $15,000">Under $15,000</option>
+            <option data-en="$15,000–$20,000" data-es="$15,000–$20,000">$15,000–$20,000</option>
+            <option data-en="$20,000–$25,000" data-es="$20,000–$25,000">$20,000–$25,000</option>
+            <option data-en="$25,000+" data-es="$25,000+">$25,000+</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label data-en="Anything Else We Should Know?" data-es="¿Algo Más que Debamos Saber?">Anything Else We Should Know?</label>
+        <textarea name="notes" rows="3" placeholder=""></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" data-en="Send My Request" data-es="Enviar mi Solicitud">Send My Request</button>
+      <p class="form-status" id="requestStatus"></p>
+    </form>
+  </div>
+</div>
+
+</div></main>
+<footer class="footer"><div class="container"><div class="footer-bottom"><span data-en="© 2026 Velocity Motors. All rights reserved." data-es="© 2026 Velocity Motors. Todos los derechos reservados.">© 2026 Velocity Motors. All rights reserved.</span><a href="index.html">Velocity Motors</a></div></div></footer>
+<script src="script.js"></script>
+</body></html>
