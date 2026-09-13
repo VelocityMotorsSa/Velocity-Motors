@@ -78,10 +78,50 @@ function vehicleTitle(v) {
   return [v.year, v.make, v.model, v.trim].filter(Boolean).join(" ");
 }
 
+function renderComingSoonCard(v) {
+  const isSpanish = document.documentElement.lang === "es";
+  const title = vehicleTitle(v);
+  const encodedTitle = encodeURIComponent(title);
+
+  return `
+    <div class="car-card coming-soon">
+      <div class="car-card-img coming-soon-img">
+        <span class="car-badge coming-soon-badge">${isSpanish ? "Próximamente" : "Coming Soon"}</span>
+        <img src="images/coming-soon-cover.jpg" alt="" class="coming-soon-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="coming-soon-placeholder" style="display:none">
+          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" aria-hidden="true">
+            <path d="M8 40h48l-5-14a6 6 0 0 0-5.6-4H18.6a6 6 0 0 0-5.6 4L8 40z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="18" cy="44" r="5" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="46" cy="44" r="5" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M4 40v-4h56v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="coming-soon-caption">${isSpanish ? "Listo para revelar" : "Ready to reveal"}</span>
+      </div>
+      <div class="car-card-body">
+        <h3>${title}</h3>
+        <div class="car-meta">
+          <span class="odometer">${v.mileage ? formatMileage(v.mileage) : (isSpanish ? "Millaje: pronto" : "Mileage TBD")}</span>
+          <span>·</span>
+          <span>${v.bodyStyle || ""}</span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price"><span class="label">${isSpanish ? "Precio de Venta" : "Showroom Price"}</span>${formatPrice(v.price)}</div>
+          <a href="schedule-test-drive.html?vehicle=${encodedTitle}" class="btn btn-outline btn-sm">${isSpanish ? "Preguntar" : "Ask About It"}</a>
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderCarCard(v, opts) {
   opts = opts || {};
   const isSpanish = document.documentElement.lang === "es";
-  const photos = v.photos && v.photos.length ? v.photos : [""];
+
+  if (!v.hasPhotos) {
+    return renderComingSoonCard(v);
+  }
+
+  const photos = v.photos;
   const detailHref = `vehicle-detail.html?id=${encodeURIComponent(v.id)}`;
   const badge = opts.badgeText
     ? `<span class="car-badge new">${opts.badgeText}</span>`
@@ -137,7 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       targets.forEach((el) => {
         const limit = parseInt(el.getAttribute("data-inventory-limit") || "0", 10);
-        let vehicles = data.vehicles || [];
+        // Show fully-photographed vehicles first; Coming Soon listings
+        // (no photos yet from DeskManager) trail at the end of the grid.
+        let vehicles = (data.vehicles || [])
+          .slice()
+          .sort((a, b) => (b.hasPhotos ? 1 : 0) - (a.hasPhotos ? 1 : 0));
         if (limit > 0) vehicles = vehicles.slice(0, limit);
 
         if (vehicles.length === 0) {
@@ -293,6 +337,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+/* Prefill the "Vehicle" field on the test-drive form when arriving
+   from a Coming Soon card (e.g. schedule-test-drive.html?vehicle=...) */
+document.addEventListener("DOMContentLoaded", () => {
+  const vehicleField = document.querySelector('[name="vehicle"]');
+  if (!vehicleField) return;
+  const params = new URLSearchParams(location.search);
+  const vehicle = params.get("vehicle");
+  if (vehicle) vehicleField.value = vehicle;
 });
 
 /* EN/ES language toggle — persists across pages via localStorage */
