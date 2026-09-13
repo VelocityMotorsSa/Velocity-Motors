@@ -1,0 +1,33 @@
+name: Update Inventory Feed
+
+on:
+  schedule:
+    # Runs 4x/day (well under AutoManager's 5-request/day limit)
+    - cron: "15 6,12,18,23 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch and build inventory.json
+        run: python3 scripts/build_inventory.py
+
+      - name: Commit updated inventory if changed
+        run: |
+          git config user.name "inventory-bot"
+          git config user.email "inventory-bot@users.noreply.github.com"
+          git add data/inventory.json
+          git diff --staged --quiet || git commit -m "Update live inventory feed"
+          git push
