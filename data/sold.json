@@ -1,0 +1,81 @@
+{
+  "vehicles": [
+    {
+      "id": "seed-1",
+      "year": "2022",
+      "make": "Nissan",
+      "model": "Sentra",
+      "trim": "SV",
+      "bodyStyle": "Sedan",
+      "mileage": 92819,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/349cba1407da42a599d4f0eaa3497ea4/52ed449404_640.jpg",
+      "soldDate": "2026-09-14"
+    },
+    {
+      "id": "seed-2",
+      "year": "2020",
+      "make": "Honda",
+      "model": "CR-V",
+      "trim": "EX-L",
+      "bodyStyle": "SUV",
+      "mileage": 111854,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/519dfa446f604c869c6d77fc5adc0769/c4ef07d742_640.jpg",
+      "soldDate": "2026-09-11"
+    },
+    {
+      "id": "seed-3",
+      "year": "2020",
+      "make": "Jeep",
+      "model": "Compass",
+      "trim": "Latitude",
+      "bodyStyle": "SUV",
+      "mileage": 75448,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/a87a866611324fd1809f354383b40c4c/8b6bebe320_640.jpg",
+      "soldDate": "2026-09-08"
+    },
+    {
+      "id": "seed-4",
+      "year": "2019",
+      "make": "Ford",
+      "model": "Fusion",
+      "trim": "SE",
+      "bodyStyle": "Sedan",
+      "mileage": 117978,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/af1e8159d8f045758c7426b4caec74cd/7ecb770522_640.jpg",
+      "soldDate": "2026-09-05"
+    },
+    {
+      "id": "seed-5",
+      "year": "2018",
+      "make": "GMC",
+      "model": "Terrain",
+      "trim": "SLE",
+      "bodyStyle": "SUV",
+      "mileage": 132784,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/716f0743944e4cf5b8493822167b01f3/6e325782f6_640.jpg",
+      "soldDate": "2026-09-02"
+    },
+    {
+      "id": "seed-6",
+      "year": "2018",
+      "make": "Honda",
+      "model": "Accord",
+      "trim": "Sport",
+      "bodyStyle": "Sedan",
+      "mileage": 88051,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/f5952490fd454a6aba4febf47a611acc/926e5f5443_640.jpg",
+      "soldDate": "2026-08-30"
+    },
+    {
+      "id": "seed-7",
+      "year": "2018",
+      "make": "Honda",
+      "model": "Pilot",
+      "trim": "EX",
+      "bodyStyle": "SUV",
+      "mileage": 118814,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/b79af8c7a5c747ad9f5de4e56b1efba4/41437096ff_640.jpg",
+      "soldDate": "2026-08-27"
+    }
+  ]
+}
