@@ -228,6 +228,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function renderSoldCard(v) {
+  const isSpanish = document.documentElement.lang === "es";
+  const title = `${v.year} ${v.make} ${v.model}${v.trim ? " " + v.trim : ""}`;
+  return `
+    <div class="car-card sold">
+      <div class="car-card-img">
+        <span class="car-badge sold" data-en="Sold" data-es="Vendido">${isSpanish ? "Vendido" : "Sold"}</span>
+        ${v.photo ? `<img src="${v.photo}" alt="${title}" loading="lazy">` : ""}
+      </div>
+      <div class="car-card-body">
+        <h3>${title}</h3>
+        <div class="car-meta"><span class="odometer">${v.mileage ? v.mileage.toLocaleString() + " mi" : ""}</span><span>·</span><span>${v.bodyStyle || ""}</span></div>
+      </div>
+    </div>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const soldTargets = document.querySelectorAll("[data-sold-grid]");
+  if (soldTargets.length === 0) return;
+
+  fetch("data/sold.json", { cache: "no-store" })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load sold data");
+      return res.json();
+    })
+    .then((data) => {
+      soldTargets.forEach((el) => {
+        const vehicles = data.vehicles || [];
+        if (vehicles.length === 0) {
+          el.innerHTML = `<p style="padding:30px;color:var(--muted)">No recently sold vehicles to show yet.</p>`;
+          return;
+        }
+        el.innerHTML = vehicles.map(renderSoldCard).join("");
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      soldTargets.forEach((el) => {
+        el.innerHTML = `<p style="padding:30px;color:var(--muted)">Recently sold vehicles are temporarily unavailable.</p>`;
+      });
+    });
+});
+
 /* ===================================================================
    AutoManager / WebManager Client ID
    -------------------------------------------------------------------
@@ -309,10 +352,27 @@ document.addEventListener("DOMContentLoaded", () => {
         status.classList.remove("success", "error");
       }
 
+      // Formspree's spam filter trusts submissions much more when it can
+      // find a real email address. Our forms use one combined "Phone or
+      // Email" field, which it can't parse — so if that field (or any
+      // other field) contains something email-shaped, pass it along
+      // explicitly as _replyto. This also makes "Reply" in your inbox
+      // go straight to the customer when they gave an email.
+      const formData = new FormData(form);
+      const emailPattern = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+      if (!formData.get("_replyto")) {
+        for (const value of formData.values()) {
+          if (typeof value === "string" && emailPattern.test(value)) {
+            formData.set("_replyto", value.match(emailPattern)[0]);
+            break;
+          }
+        }
+      }
+
       try {
         const response = await fetch(FORMSPREE_ENDPOINT, {
           method: "POST",
-          body: new FormData(form),
+          body: formData,
           headers: { Accept: "application/json" }
         });
 
