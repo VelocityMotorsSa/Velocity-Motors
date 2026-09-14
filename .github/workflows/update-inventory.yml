@@ -28,6 +28,6 @@ jobs:
         run: |
           git config user.name "inventory-bot"
           git config user.email "inventory-bot@users.noreply.github.com"
-          git add data/inventory.json
+          git add data/inventory.json data/sold.json
           git diff --staged --quiet || git commit -m "Update live inventory feed"
           git push
