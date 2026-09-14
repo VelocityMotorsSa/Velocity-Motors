@@ -8,13 +8,17 @@ script must only run a few times a day via a scheduled GitHub Action,
 never on every page load.
 """
 import json
+import os
 import re
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 
 FEED_URL = "https://clients.automanager.com/afed6db0f03a45e99a735f6da6ecae0d/inventory.xml?ID=017852&Features=1&Photos=1"
 OUTPUT_PATH = "data/inventory.json"
+SOLD_PATH = "data/sold.json"
+MAX_SOLD_ENTRIES = 12
 
 
 def text_of(vehicle, tag, default=""):
@@ -70,6 +74,60 @@ def parse_vehicle(vehicle):
     }
 
 
+def load_previous_vehicles():
+    """Read the inventory.json from the last run, if it exists, so we can
+    detect which vehicles have disappeared (= sold) since then."""
+    if not os.path.exists(OUTPUT_PATH):
+        return []
+    try:
+        with open(OUTPUT_PATH) as f:
+            old_data = json.load(f)
+        return old_data.get("vehicles", [])
+    except (json.JSONDecodeError, OSError):
+        return []
+
+
+def update_sold_list(previous_vehicles, current_vehicles):
+    """Any vehicle present last run but missing this run is treated as
+    sold. Adds it to data/sold.json (most recent first, capped list)."""
+    current_ids = {v["id"] for v in current_vehicles}
+    newly_sold = [v for v in previous_vehicles if v["id"] not in current_ids and v.get("hasPhotos")]
+
+    if os.path.exists(SOLD_PATH):
+        try:
+            with open(SOLD_PATH) as f:
+                sold_data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            sold_data = {"vehicles": []}
+    else:
+        sold_data = {"vehicles": []}
+
+    existing_ids = {v["id"] for v in sold_data["vehicles"]}
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    for v in newly_sold:
+        if v["id"] in existing_ids:
+            continue
+        sold_data["vehicles"].insert(0, {
+            "id": v["id"],
+            "year": v["year"],
+            "make": v["make"],
+            "model": v["model"],
+            "trim": v["trim"],
+            "bodyStyle": v["bodyStyle"],
+            "mileage": v["mileage"],
+            "photo": v["photos"][0] if v["photos"] else "",
+            "soldDate": now,
+        })
+
+    sold_data["vehicles"] = sold_data["vehicles"][:MAX_SOLD_ENTRIES]
+
+    with open(SOLD_PATH, "w") as f:
+        json.dump(sold_data, f, indent=2)
+
+    return len(newly_sold)
+
+
 def build(xml_bytes):
     root = ET.fromstring(xml_bytes)
     vehicles = [parse_vehicle(v) for v in root.findall("Vehicle")]
@@ -97,12 +155,18 @@ def main():
         with urllib.request.urlopen(req, timeout=30) as resp:
             xml_bytes = resp.read()
 
+    previous_vehicles = load_previous_vehicles()
+
     data = build(xml_bytes)
     with open(OUTPUT_PATH, "w") as f:
         json.dump(data, f, indent=2)
+
+    newly_sold_count = update_sold_list(previous_vehicles, data["vehicles"])
+
     no_photo_count = sum(1 for v in data["vehicles"] if not v["hasPhotos"])
     print(f"Wrote {len(data['vehicles'])} vehicles to {OUTPUT_PATH} "
           f"({no_photo_count} showing as Coming Soon — no photos yet)")
+    print(f"{newly_sold_count} vehicle(s) newly marked as sold in {SOLD_PATH}")
 
 
 if __name__ == "__main__":
