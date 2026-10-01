@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "10/1/2026 12:33:17 PM",
+  "updated": "10/1/2026 6:31:08 PM",
   "vehicles": [
     {
       "id": "9e124892abc84c3aaf1140f829b38912",
@@ -3716,13 +3716,13 @@
       "model": "Tacoma",
       "trim": "",
       "bodyStyle": "Truck",
-      "mileage": 162410,
+      "mileage": 162411,
       "transmission": "5 Speed Manual",
       "engine": "2L NA I4 double overhead cam (DOHC) 16V",
       "drivetrain": "RWD",
       "fuel": "Gasoline",
-      "extColor": "Gray",
-      "extColorFactory": "Gray",
+      "extColor": "",
+      "extColorFactory": "SILVER",
       "intColor": "Gray",
       "intColorFactory": "Gray",
       "price": 0.0,
