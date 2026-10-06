@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "10/5/2026 2:29:24 PM",
+  "updated": "10/6/2026 12:00:18 AM",
   "vehicles": [
     {
       "id": "9e124892abc84c3aaf1140f829b38912",
@@ -1746,8 +1746,8 @@
       "engine": "2.0L I4 158hp 138ft. lbs.",
       "drivetrain": "FWD",
       "fuel": "Gasoline",
-      "extColor": "Gray",
-      "extColorFactory": "Gray",
+      "extColor": "",
+      "extColorFactory": "SILVER",
       "intColor": "Black",
       "intColorFactory": "Black",
       "price": 15500.0,
