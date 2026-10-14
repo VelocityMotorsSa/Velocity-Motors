@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "10/13/2026 10:39:54 PM",
+  "updated": "10/14/2026 1:52:43 AM",
   "vehicles": [
     {
       "id": "9e124892abc84c3aaf1140f829b38912",
@@ -2098,15 +2098,15 @@
       "model": "Edge",
       "trim": "Limited",
       "bodyStyle": "SUV",
-      "mileage": 129017,
+      "mileage": 129039,
       "transmission": "Automatic",
       "engine": "EcoBoost 2.0L Turbo I4 240hp 270ft. lbs.",
       "drivetrain": "FWD",
       "fuel": "Gasoline",
-      "extColor": "Black",
-      "extColorFactory": "Black",
-      "intColor": "Black",
-      "intColorFactory": "Black",
+      "extColor": "",
+      "extColorFactory": "BLUE",
+      "intColor": "",
+      "intColorFactory": "GRAY",
       "price": 7900.0,
       "saleStatus": "Available",
       "photos": [],
