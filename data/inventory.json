@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "11/4/2026 2:25:06 PM",
+  "updated": "11/4/2026 11:37:15 PM",
   "vehicles": [
     {
       "id": "f6e7eac5d8c14afb9816cc65bcbc7755",
@@ -3076,7 +3076,7 @@
       "model": "Edge",
       "trim": "SEL",
       "bodyStyle": "SUV",
-      "mileage": 109873,
+      "mileage": 109885,
       "transmission": "Automatic",
       "engine": "EcoBoost 2.0L Turbo I4 250hp 280ft. lbs.",
       "drivetrain": "AWD",
