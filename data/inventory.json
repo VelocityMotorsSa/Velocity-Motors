@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "11/7/2026 9:44:52 PM",
+  "updated": "11/8/2026 2:24:10 AM",
   "vehicles": [
     {
       "id": "f6e7eac5d8c14afb9816cc65bcbc7755",
@@ -2058,7 +2058,7 @@
       "extColorFactory": "White",
       "intColor": "Black",
       "intColorFactory": "Black",
-      "price": 0.0,
+      "price": 15700.0,
       "saleStatus": "Available",
       "photos": [
         "https://automanager.blob.core.windows.net/wmphotos/017852/26637efc47b544e5bfa7f50110845caf/d5c60b05fa_640.jpg",
