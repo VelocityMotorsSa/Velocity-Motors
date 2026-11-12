@@ -1,6 +1,127 @@
 {
   "vehicles": [
     {
+      "id": "151615bf7aae4067af3cbfb96c4ef80a",
+      "year": "2021",
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "trim": "SE",
+      "bodyStyle": "Sedan",
+      "mileage": 109554,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/151615bf7aae4067af3cbfb96c4ef80a/60c22c8c7f_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "24e9bb7d92b54618ae05f1c6d939f84b",
+      "year": "2024",
+      "make": "Chevrolet",
+      "model": "Blazer",
+      "trim": "LT",
+      "bodyStyle": "SUV",
+      "mileage": 101523,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/24e9bb7d92b54618ae05f1c6d939f84b/e189955a09_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "b8f0667df2174d0eac48a9600e8e60fb",
+      "year": "2020",
+      "make": "Honda",
+      "model": "Civic",
+      "trim": "LX",
+      "bodyStyle": "Sedan",
+      "mileage": 119747,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/b8f0667df2174d0eac48a9600e8e60fb/9b58b66f0c_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "407c52eed45441d5910291530036caa6",
+      "year": "2021",
+      "make": "Volkswagen",
+      "model": "Atlas",
+      "trim": "SE",
+      "bodyStyle": "SUV",
+      "mileage": 85961,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/407c52eed45441d5910291530036caa6/cda42ec7c0_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "e21973361c3943639bbbebbe3958f3d3",
+      "year": "2021",
+      "make": "Nissan",
+      "model": "Rogue",
+      "trim": "SV",
+      "bodyStyle": "Wagon",
+      "mileage": 78979,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/e21973361c3943639bbbebbe3958f3d3/919041be87_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "15a1043b2e4e4f379cdaddf37f8867a8",
+      "year": "2020",
+      "make": "Honda",
+      "model": "Civic",
+      "trim": "LX",
+      "bodyStyle": "Sedan",
+      "mileage": 126886,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/15a1043b2e4e4f379cdaddf37f8867a8/77745b0896_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "efbcf373a38c4d5fac7d81714c4f0c05",
+      "year": "2021",
+      "make": "Nissan",
+      "model": "Murano",
+      "trim": "S",
+      "bodyStyle": "SUV",
+      "mileage": 77181,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/efbcf373a38c4d5fac7d81714c4f0c05/08df94725d_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "cdd54de51563410b9a7125b7908bb908",
+      "year": "2020",
+      "make": "Chevrolet",
+      "model": "Equinox",
+      "trim": "Premier",
+      "bodyStyle": "SUV",
+      "mileage": 122226,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/cdd54de51563410b9a7125b7908bb908/012cdeb125_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "76e3850dfe764fb88b51e548fcf4b3f9",
+      "year": "2020",
+      "make": "Toyota",
+      "model": "Camry",
+      "trim": "SE",
+      "bodyStyle": "Sedan",
+      "mileage": 91591,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/76e3850dfe764fb88b51e548fcf4b3f9/305cbd9b6a_800.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "9e124892abc84c3aaf1140f829b38912",
+      "year": "2019",
+      "make": "Toyota",
+      "model": "Prius Prime",
+      "trim": "Premium",
+      "bodyStyle": "Hatchback",
+      "mileage": 114032,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/9e124892abc84c3aaf1140f829b38912/d6fac78f20_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
+      "id": "f6e7eac5d8c14afb9816cc65bcbc7755",
+      "year": "2018",
+      "make": "Chevrolet",
+      "model": "Colorado",
+      "trim": "Work Truck",
+      "bodyStyle": "Truck",
+      "mileage": 115200,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/f6e7eac5d8c14afb9816cc65bcbc7755/595d66433b_640.jpg",
+      "soldDate": "2026-11-12"
+    },
+    {
       "id": "seed-1",
       "year": "2022",
       "make": "Nissan",
@@ -10,72 +131,6 @@
       "mileage": 92819,
       "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/349cba1407da42a599d4f0eaa3497ea4/52ed449404_640.jpg",
       "soldDate": "2026-09-14"
-    },
-    {
-      "id": "seed-2",
-      "year": "2020",
-      "make": "Honda",
-      "model": "CR-V",
-      "trim": "EX-L",
-      "bodyStyle": "SUV",
-      "mileage": 111854,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/519dfa446f604c869c6d77fc5adc0769/c4ef07d742_640.jpg",
-      "soldDate": "2026-09-11"
-    },
-    {
-      "id": "seed-3",
-      "year": "2020",
-      "make": "Jeep",
-      "model": "Compass",
-      "trim": "Latitude",
-      "bodyStyle": "SUV",
-      "mileage": 75448,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/a87a866611324fd1809f354383b40c4c/8b6bebe320_640.jpg",
-      "soldDate": "2026-09-08"
-    },
-    {
-      "id": "seed-4",
-      "year": "2019",
-      "make": "Ford",
-      "model": "Fusion",
-      "trim": "SE",
-      "bodyStyle": "Sedan",
-      "mileage": 117978,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/af1e8159d8f045758c7426b4caec74cd/7ecb770522_640.jpg",
-      "soldDate": "2026-09-05"
-    },
-    {
-      "id": "seed-5",
-      "year": "2018",
-      "make": "GMC",
-      "model": "Terrain",
-      "trim": "SLE",
-      "bodyStyle": "SUV",
-      "mileage": 132784,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/716f0743944e4cf5b8493822167b01f3/6e325782f6_640.jpg",
-      "soldDate": "2026-09-02"
-    },
-    {
-      "id": "seed-6",
-      "year": "2018",
-      "make": "Honda",
-      "model": "Accord",
-      "trim": "Sport",
-      "bodyStyle": "Sedan",
-      "mileage": 88051,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/f5952490fd454a6aba4febf47a611acc/926e5f5443_640.jpg",
-      "soldDate": "2026-08-30"
-    },
-    {
-      "id": "seed-7",
-      "year": "2018",
-      "make": "Honda",
-      "model": "Pilot",
-      "trim": "EX",
-      "bodyStyle": "SUV",
-      "mileage": 118814,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/b79af8c7a5c747ad9f5de4e56b1efba4/41437096ff_640.jpg",
-      "soldDate": "2026-08-27"
     }
   ]
 }
