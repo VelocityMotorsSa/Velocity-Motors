@@ -1,6 +1,17 @@
 {
   "vehicles": [
     {
+      "id": "81b07807f92b4656b2f123d95122277a",
+      "year": "2016",
+      "make": "Toyota",
+      "model": "Tacoma",
+      "trim": "SR5 V6",
+      "bodyStyle": "Truck",
+      "mileage": 159724,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/81b07807f92b4656b2f123d95122277a/779c36e121_640.jpg",
+      "soldDate": "2026-11-13"
+    },
+    {
       "id": "151615bf7aae4067af3cbfb96c4ef80a",
       "year": "2021",
       "make": "Volkswagen",
@@ -120,17 +131,6 @@
       "mileage": 115200,
       "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/f6e7eac5d8c14afb9816cc65bcbc7755/595d66433b_640.jpg",
       "soldDate": "2026-11-12"
-    },
-    {
-      "id": "seed-1",
-      "year": "2022",
-      "make": "Nissan",
-      "model": "Sentra",
-      "trim": "SV",
-      "bodyStyle": "Sedan",
-      "mileage": 92819,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/349cba1407da42a599d4f0eaa3497ea4/52ed449404_640.jpg",
-      "soldDate": "2026-09-14"
     }
   ]
 }
