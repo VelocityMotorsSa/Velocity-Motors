@@ -1,6 +1,6 @@
 {
   "clientId": "017852",
-  "updated": "11/26/2026 4:47:38 PM",
+  "updated": "11/27/2026 1:41:26 AM",
   "vehicles": [
     {
       "id": "ca74dbb454cc4ed591e937c2da0803a4",
@@ -1789,61 +1789,6 @@
         "Window defogger: rear"
       ],
       "vdpUrl": "http://www.velocitymotorsj.com/vehicle-details/600a64f8acc64f57858d6156c6987c4a"
-    },
-    {
-      "id": "a082b18c5ada4617a6c14152bf5e3fe5",
-      "hasPhotos": true,
-      "stockNum": "1899",
-      "vin": "5TETX22N85Z058894",
-      "year": "2005",
-      "make": "Toyota",
-      "model": "Tacoma",
-      "trim": "",
-      "bodyStyle": "Truck",
-      "mileage": 162411,
-      "transmission": "5 Speed Manual",
-      "engine": "2L NA I4 double overhead cam (DOHC) 16V",
-      "drivetrain": "RWD",
-      "fuel": "Gasoline",
-      "extColor": "",
-      "extColorFactory": "SILVER",
-      "intColor": "Gray",
-      "intColorFactory": "Gray",
-      "price": 0.0,
-      "saleStatus": "Available",
-      "photos": [
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/6998120ddb_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/60aef6718a_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/31e11aaaef_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/e193cc4522_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/71251cbb5e_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/65089dd708_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/e77a8e4d03_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/15742e30fd_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/eec25c8447_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/1318575b30_640.jpg",
-        "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/f144e2b73d_640.jpg"
-      ],
-      "features": [
-        "Front air conditioning: automatic climate control",
-        "Front air conditioning zones: single",
-        "Front airbags: dual",
-        "In-Dash CD: single disc",
-        "Radio: AM/FM",
-        "ABS: 4-wheel",
-        "Center console: front console with storage",
-        "Overhead console: front",
-        "Power steering: hydraulic",
-        "Steering wheel: tilt and telescopic",
-        "Clock",
-        "Gauge: tachometer",
-        "Front seat type: bucket",
-        "Rear seat type: jumpseats",
-        "Upholstery: cloth",
-        "Wheels: steel",
-        "Front wipers: intermittent"
-      ],
-      "vdpUrl": "http://www.velocitymotorsj.com/vehicle-details/a082b18c5ada4617a6c14152bf5e3fe5"
     },
     {
       "id": "8bc64a6da2374d35bca79a818861a6db",

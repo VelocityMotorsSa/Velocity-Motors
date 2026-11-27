@@ -1,6 +1,17 @@
 {
   "vehicles": [
     {
+      "id": "a082b18c5ada4617a6c14152bf5e3fe5",
+      "year": "2005",
+      "make": "Toyota",
+      "model": "Tacoma",
+      "trim": "",
+      "bodyStyle": "Truck",
+      "mileage": 162411,
+      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/a082b18c5ada4617a6c14152bf5e3fe5/6998120ddb_640.jpg",
+      "soldDate": "2026-11-27"
+    },
+    {
       "id": "81b07807f92b4656b2f123d95122277a",
       "year": "2016",
       "make": "Toyota",
@@ -119,17 +130,6 @@
       "bodyStyle": "Hatchback",
       "mileage": 114032,
       "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/9e124892abc84c3aaf1140f829b38912/d6fac78f20_640.jpg",
-      "soldDate": "2026-11-12"
-    },
-    {
-      "id": "f6e7eac5d8c14afb9816cc65bcbc7755",
-      "year": "2018",
-      "make": "Chevrolet",
-      "model": "Colorado",
-      "trim": "Work Truck",
-      "bodyStyle": "Truck",
-      "mileage": 115200,
-      "photo": "https://automanager.blob.core.windows.net/wmphotos/017852/f6e7eac5d8c14afb9816cc65bcbc7755/595d66433b_640.jpg",
       "soldDate": "2026-11-12"
     }
   ]
